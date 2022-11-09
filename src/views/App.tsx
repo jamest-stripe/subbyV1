@@ -1,7 +1,8 @@
 import { Box, ContextView, Inline, Link } from "@stripe/ui-extension-sdk/ui";
 import type { ExtensionContextValue } from "@stripe/ui-extension-sdk/context";
 
-import BrandIcon from "./brand_icon.svg";
+import BrandIcon from "./subby.svg";
+import AddPhase from "./components/addPhase";
 
 /**
  * This is a view that is rendered in the Stripe dashboard's customer detail page.
@@ -19,45 +20,9 @@ const App = ({ userContext, environment }: ExtensionContextValue) => {
         href: "https://stripe.com/docs/stripe-apps"
       }}
     >
-      <Box css={{ height: "fill", stack: "y", distribute: "space-between" }}>
-        <Box
-          css={{
-            background: "container",
-            borderRadius: "medium",
-            marginTop: "small",
-            padding: "large",
-          }}>
-          Edit{" "}
-          <Inline css={{ fontFamily: "monospace" }}>src/views/App.tsx</Inline>{" "}
-          and save to reload this view.
-        </Box>
-
-        <Box css={{ color: "secondary" }}>
-          <Box css={{ marginBottom: "medium" }}>
-            Learn more about views, authentication, and accessing data in{" "}
-            <Link
-              href="https://stripe.com/docs/stripe-apps"
-              target="blank"
-              type="secondary"
-            >
-              Stripe Apps docs
-            </Link>
-            .
-          </Box>
-
-          <Box css={{ marginBottom: "medium" }}>
-            Questions? Get help with your app from the{" "}
-            <Link
-              href="https://github.com/stripe/stripe-apps/wiki/Developer-Support"
-              target="blank"
-              type="secondary"
-            >
-              Stripe Apps wiki
-            </Link>
-            .
-          </Box>
-        </Box>
-      </Box>
+    <AddPhase 
+    options={({userContext, environment})}
+    />
     </ContextView>
   );
 };

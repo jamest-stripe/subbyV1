@@ -2,7 +2,7 @@
   "id": "com.example.subby",
   "version": "0.0.1",
   "name": "Subby",
-  "icon": "",
+  "icon": "src/views/subby.png",
   "permissions": [],
   "app_backend": {
     "webhooks": []
